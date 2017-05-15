@@ -263,7 +263,7 @@ class PlayState extends FlxState
 				
 				bullet.velocity.set(turret01.power*(5), 0);
 				bullet.velocity.rotate(FlxPoint.weak(), turret01.angle);
-				bullet.velocity.x += bullet.velocity.x * (windAmt / 100);
+				bullet.velocity.x += bullet.velocity.x * (windAmt / 200);
 				bullet.revive();
 				
 				p.put();
@@ -281,7 +281,7 @@ class PlayState extends FlxState
 				
 				bullet.velocity.set(turret02.power*(5), 0);
 				bullet.velocity.rotate(FlxPoint.weak(), turret02.angle);
-				bullet.velocity.x += bullet.velocity.x * (windAmt / 100);
+				bullet.velocity.x += bullet.velocity.x * (windAmt / 200);
 				bullet.revive();
 				
 				p.put();

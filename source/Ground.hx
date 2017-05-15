@@ -25,7 +25,7 @@ class Ground extends FlxSprite
 		
 		var noise:BitmapData = new BitmapData(FlxG.width,1, false, 0xFF000000);
 		noise.perlinNoise(Std.int(FlxG.width), 4,FlxG.random.int(5,20), FlxG.random.int(), false, false, 7, true, [new Point(FlxG.random.float(0,FlxG.width), 0)]);
-		FlxG.bitmapLog.add(noise, "noise");
+		
 		
 		makeGraphic(FlxG.width, FlxG.height, FlxColor.TRANSPARENT, true, "ground");
 		for (i in 0...FlxG.width)
@@ -34,8 +34,6 @@ class Ground extends FlxSprite
 			var p:Int = noise.getPixel(i, 0);
 			var c:Float = FlxColor.fromInt(p).redFloat;
 		
-			
-			
 			var start:Int = Std.int((FlxG.height * .4) + (FlxG.height * .5 * c));
 			
 			var c:FlxColor = FlxColor.GREEN.getLightened(.15);

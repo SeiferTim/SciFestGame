@@ -1,5 +1,6 @@
 package;
 
+import axollib.AxolAPI;
 import flixel.FlxGame;
 import openfl.display.Sprite;
 import axollib.DissolveState;
@@ -9,6 +10,7 @@ class Main extends Sprite
 	public function new()
 	{
 		super();
-		addChild(new FlxGame(0, 0, PlayState));
+		AxolAPI.firstState = PlayState;
+		addChild(new FlxGame(0, 0, DissolveState));
 	}
 }
