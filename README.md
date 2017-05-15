@@ -179,6 +179,32 @@ This is how the destructable terrain works.
 
 ### Tank Gravity
 
+Tanks should fall if there is empty space below them:
 
+```haxe
+override public function update(elapsed:Float):Void 
+{
+	fell = false;
+	if (Std.int(y + height + 1) < parent.ground.findGround(getBaseX(), Std.int(y+height-1)))
+	{
+		fell = true;
+		y++;
+	}
+	
+	super.update(elapsed);
+}
+```
 
+The `fell` flag is used to let the `PlayState` know if it can continue to the next player or not. I could probably only have it check after the explosion has finished, but this is fine.
 
+### Game Over
+
+Finally, after the tanks have finished falling (if at all), I check to see who's still alive, and, if one (or both) have died, the game ends. I allow the player to restart with Space.
+
+## Conclusion
+
+So that's it! The game works! I ended up adding some wind at the last minute to make it a bit harder to hit your opponent (Although, it needs more work to be good).
+
+I think there's a lot that could be added to the game: more players, different weapons, better terrain, etc, but, for a game I made in a single day, it's pretty good!
+
+You can try the game out here: http://www.tims-world.com/projects/scifest-game/
